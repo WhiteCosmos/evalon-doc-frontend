@@ -1,0 +1,105 @@
+$EVALON_FONT_COLOR_DARK: #262626;
+
+$EVALON_FONT_COLOR: #626a73;
+
+$EVALON_FONT_COLOR_LIGHT: #77828c;
+
+$EVALON_FONT_COLOR_VERY_LIGHT: #98a6b3;
+
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: "PingFang SC", sans-serif; // 统一使用苹方字体
+}
+
+.ev-font-h5 {
+
+}
+
+@mixin margin-top-and-bottom {
+    margin-top: 24px;
+
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 32px;
+
+    line-height: 56px;
+
+    color: $EVALON_FONT_COLOR;
+}
+
+h2 {
+    font-size: 28px;
+
+    line-height: 48px;
+
+    color: $EVALON_FONT_COLOR;
+}
+
+h3 {
+    font-size: 18px;
+
+    line-height: 32px;
+
+    color: $EVALON_FONT_COLOR;
+}
+
+h4 {
+    font-size: 16px;
+
+    line-height: 24px;
+
+    color: $EVALON_FONT_COLOR;
+}
+
+h5 {
+    font-size: 14px;
+
+    line-height: 24px;
+
+    color: $EVALON_FONT_COLOR;
+}
+
+p {
+    font-size: 14px;
+
+    line-height: 24px;
+
+    color: $EVALON_FONT_COLOR;
+
+    @include margin-top-and-bottom
+}
+
+h6 {
+    font-size: 12px;
+
+    line-height: 16px;
+
+    color: $EVALON_FONT_COLOR;
+}
+
+a {
+
+}
+
+.reference {
+    font-size: 12px;
+
+    line-height: 16px;
+
+    font-weight: normal;
+
+    color: $EVALON_FONT_COLOR_LIGHT;
+}
+
+.reference-bolder {
+    font-size: 12px;
+
+    line-height: 16px;
+
+    font-weight: bolder;
+
+    color: $EVALON_FONT_COLOR_LIGHT;
+}
+
+

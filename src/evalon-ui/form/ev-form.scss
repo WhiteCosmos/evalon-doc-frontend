@@ -1,0 +1,47 @@
+@import "../evalon-ui";
+
+$FORM_COMPONENT_HEIGHT: 40px;
+
+$FORM_BORDER_OFFSET: 2px;
+
+$FORM_POSITION_OFFSET: 1px;
+
+.ev-default-input {
+    font-size: 14px;
+
+    color: $EVALON_BLUE;
+
+    outline: none;
+
+    border: none;
+
+    height: 32px;
+
+    width: 100%;
+
+    background-color: transparent;
+}
+
+.ev-search-input {
+    font-size: 13px;
+
+    font-weight: normal;
+
+    color: $EVALON_BLUE;
+
+    outline: none;
+
+    border: none;
+
+    height: 32px;
+
+    line-height: 32px;
+
+    flex: 1;
+
+    background-color: transparent;
+}
+
+@mixin ev-form-shadow {
+    box-shadow: 0 2px 2px 1px $EVALON_BLUE_VERY_LIGHT;
+}

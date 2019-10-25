@@ -1,0 +1,30 @@
+@import "ev-colors";
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    width: 8px;
+
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border: 2px solid white;
+
+    width: 6px;
+
+    background: $NEUTRAL_GREY_3;
+
+    border-radius: 8px;
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $NEUTRAL_GREY_3;
+}

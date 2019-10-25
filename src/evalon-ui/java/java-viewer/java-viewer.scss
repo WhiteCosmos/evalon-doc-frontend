@@ -1,0 +1,67 @@
+@import "../../evalon-ui";
+
+.java-column {
+    display: flex;
+
+    flex: 1;
+
+    height: 32px;
+
+    @include ev-border-bottom($NEUTRAL_GREY_2);
+}
+
+.column-on-hover {
+    background-color: $NEUTRAL_GREY_1;
+
+    transition: background-color 72ms;
+}
+
+//过长注释展示
+
+//.whole-text-wrapper:before {
+//  content: '';
+//  display: block;
+//  position: absolute;
+//  top: -18px;
+//  left: 15px;
+//  width: 0;
+//  height: 0;
+//  border-color: transparent transparent $SECONDARY_COLOR transparent;
+//  border-style: solid;
+//  border-width: 9px;
+//}
+//
+//.whole-text-wrapper:after {
+//  content: '';
+//  display: block;
+//  position: absolute;
+//  top: -16px;
+//  left: 16px;
+//  width: 0;
+//  height: 0;
+//  border-color: transparent transparent white transparent;
+//  border-style: solid;
+//  border-width: 8px;
+//}
+//
+//.whole-text-wrapper {
+//  padding: 8px;
+//  position: absolute;
+//  width: 100%;
+//  top: 28px;
+//  background-color: white;
+//  border-radius: 5px;
+//  box-shadow: 0 2px 20px -5px $FONT_COLOR_LIGHT;
+//  border: 1px solid $SECONDARY_COLOR;
+//  z-index: 9999;
+//}
+//
+//.long-comment {
+//  font-size: 12px;
+//  line-height: 24px;
+//  color: $FONT_COLOR;
+//  font-weight: normal;
+//  overflow: visible;
+//  white-space: pre-wrap;
+//  word-wrap: break-word;
+//}

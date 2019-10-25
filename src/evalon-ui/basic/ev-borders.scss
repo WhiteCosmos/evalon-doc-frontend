@@ -1,0 +1,98 @@
+@import "ev-colors";
+
+.ev-radius-xs {
+
+}
+
+.ev-radius-s {
+
+}
+
+.ev-radius-m {
+
+}
+
+.ev-radius-l {
+
+}
+
+$BORDER_RADIUS_NULL: 0;
+
+$BORDER_RADIUS_S: 5px;
+
+$BORDER_RADIUS_M: 10px;
+
+@mixin ev-border($COLOR, $RADIUS) {
+    border: 1px solid $COLOR;
+
+    border-radius: $RADIUS;
+}
+
+@mixin ev-border-top($color: $EVALON_GREY_REGULAR) {
+    border-top: 1px solid;
+
+    border-color: $color;
+}
+
+@mixin ev-border-bottom($color: $EVALON_GREY_REGULAR) {
+    border-bottom: 1px solid;
+
+    border-color: $color;
+}
+
+@mixin ev-border-left($color: $EVALON_GREY_REGULAR) {
+    border-left: 1px solid;
+
+    border-color: $color;
+}
+
+@mixin ev-border-right($color: $EVALON_GREY_REGULAR) {
+    border-right: 1px solid;
+
+    border-color: $color;
+}
+
+@mixin ev-border-without-left($COLOR, $RADIUS) {
+    @include ev-border-right($COLOR);
+
+    @include ev-border-top($COLOR);
+
+    @include ev-border-bottom($COLOR);
+
+    border-radius: 0 $RADIUS $RADIUS 0;
+}
+
+@mixin ev-border-without-right($COLOR, $RADIUS) {
+    @include ev-border-bottom($COLOR);
+
+    @include ev-border-left($COLOR);
+
+    @include ev-border-top($COLOR);
+
+    border-radius: $RADIUS 0 0 $RADIUS;
+}
+
+@mixin ev-border-without-bottom($COLOR, $RADIUS) {
+    @include ev-border-left($COLOR);
+
+    @include ev-border-right($COLOR);
+
+    @include ev-border-top($COLOR);
+
+    border-radius: $RADIUS $RADIUS 0 0;
+}
+
+@mixin ev-border-without-top($COLOR, $RADIUS) {
+    @include ev-border-left($COLOR);
+
+    @include ev-border-right($COLOR);
+
+    @include ev-border-bottom($COLOR);
+
+    border-radius: 0 0 $RADIUS $RADIUS;
+}
+
+@mixin ev-shadow($VALUE) {
+    box-shadow: 0 0 $VALUE -5px $EVALON_GREY_REGULAR;
+}
+

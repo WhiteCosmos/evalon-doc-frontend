@@ -1,0 +1,17 @@
+@import "../evalon-ui";
+
+.ev-collapse-title {
+    @include ev-border-bottom($EVALON_BLUE_LIGHT)
+}
+
+.ev-collapse-title:hover {
+    cursor: pointer;
+}
+
+.ev-collapse-icon {
+    @include ev-absolute(0, 0, -$SIZE_24_PX, 0)
+}
+
+.ev-collapse-slot-container {
+    @include ev-padding-top($SIZE_16_PX)
+}

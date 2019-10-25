@@ -1,0 +1,25 @@
+@import "../../evalon-ui";
+
+.ev-selector-style {
+    border-radius: 40px;
+
+    background-color: white;
+
+    @include ev-border($EVALON_BLUE_LIGHT, 40px);
+
+    //box-shadow: 0 2px 2px 1px $EVALON_BLUE_VERY_LIGHT;
+
+    z-index: 103;
+
+    transition: box-shadow .13s;
+}
+
+.ev-selector-expand-style {
+
+}
+
+.ev-selector-style:hover {
+    //box-shadow: 0 2px 2px 2px $EVALON_BLUE_VERY_LIGHT;
+
+    //transition: box-shadow .13s;
+}

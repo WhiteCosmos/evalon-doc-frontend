@@ -1,0 +1,269 @@
+@import "ev-fonts";
+
+// COMMON
+
+$WHITE: white;
+
+$BLACK: black;
+
+// COLOR
+
+$EVALON_BLUE: #4A90E2;
+
+$EVALON_BLUE_DARK: #326299;
+
+$EVALON_BLUE_LIGHT: #abccf5;
+
+$EVALON_BLUE_VERY_LIGHT: #f2f9ff;
+
+$EVALON_RED: #FF8282;
+
+$EVALON_RED_LIGHT: #ffe6e6;
+
+$EVALON_GREEN: #B8E986;
+
+$EVALON_GREEN_LIGHT: #d2e8ba;
+
+$EVALON_YELLOW: #f3d23e;
+
+$EVALON_YELLOW_LIGHT: #f2e9c2;
+
+$EVALON_PURPLE: #8f70cc;
+
+// GREY
+
+$EVALON_GREY_VERY_LIGHT: #fcfcfc;
+
+$EVALON_GREY_LIGHT: #FAFAFA;
+
+$EVALON_GREY_REGULAR: #D3D3D3;
+
+$EVALON_GREY_MEDIUM: #EEE;
+
+$EVALON_GREY_DARK: #CCC;
+
+$EVALON_GREY_BORDER: #e6e6e6;
+
+
+$EVALON_GREY_LEVEL_0: #fcfcfc;
+
+$EVALON_GREY_LEVEL_1: #f5f5f5;
+
+$EVALON_GREY_LEVEL_2: #f0f0f0;
+
+$EVALON_GREY_LEVEL_3: #FAFAFA;
+
+$EVALON_GREY_LEVEL_4: #FAFAFA;
+
+$EVALON_GREY_LEVEL_5: #FAFAFA;
+
+$EVALON_GREY_LEVEL_6: #FAFAFA;
+
+$EVALON_GREY_LEVEL_7: #FAFAFA;
+
+$EVALON_GREY_LEVEL_8: #FAFAFA;
+
+$EVALON_GREY_LEVEL_9: #FAFAFA;
+
+$EVALON_GREY_LEVEL_10: #FAFAFA;
+
+$EVALON_FONT_1: #FAFAFA;
+
+// neutral grey
+
+$NEUTRAL_GREY_0: #FCFCFC; // 0
+
+$NEUTRAL_GREY_1: #FAFAFA; // 2
+
+$NEUTRAL_GREY_2: #f6f6f6; // 4
+
+$NEUTRAL_GREY_3: #eeeeee; // 8
+
+$NEUTRAL_GREY_4: #dedede; // 16
+
+$NEUTRAL_GREY_5: #c8c8c8; // 32
+
+
+.neutral-grey-0 {
+    color: $NEUTRAL_GREY_0;
+}
+
+.neutral-grey-1 {
+    color: $NEUTRAL_GREY_1;
+}
+
+.neutral-grey-2 {
+    color: $NEUTRAL_GREY_2;
+}
+
+.neutral-grey-3 {
+    color: $NEUTRAL_GREY_3;
+}
+
+.neutral-grey-4 {
+    color: $NEUTRAL_GREY_4;
+}
+
+.neutral-grey-5 {
+    color: $NEUTRAL_GREY_5;
+}
+
+// basic
+
+$EVALON_WHITE: #FFFFFF;
+
+$EVALON_BLACK: #000000;
+
+$EVALON_TRANSPARENT: transparent;
+
+.evalon-white {
+    color: $EVALON_WHITE;
+}
+
+.evalon-black {
+    color: $EVALON_BLACK;
+}
+
+.evalon-transparent {
+    color: $EVALON_TRANSPARENT;
+}
+
+// cool grey
+
+$EVALON_COOL_GREY_9: #585f66;
+
+$EVALON_COOL_GREY_8: #77828c;
+
+$EVALON_COOL_GREY_7: #98a6b3;
+
+$EVALON_COOL_GREY_6: #626a73;
+
+// olive green
+
+$OLIVE_GREEN: #B8E986;
+
+.olive-green {
+    color: $OLIVE_GREEN;
+}
+
+//
+
+// royal blue
+
+$EVALON_ROYAL_BLUE_9: blue;
+
+$EVALON_ROYAL_BLUE_8: blue;
+
+$EVALON_ROYAL_BLUE_7: #4A90E2;
+
+$EVALON_ROYAL_BLUE_6: #C4DAF5;
+
+$EVALON_ROYAL_BLUE_5: #6fa5de;
+
+$EVALON_ROYAL_BLUE_4: #85b1de;
+
+$EVALON_ROYAL_BLUE_2: #e6f1ff;
+
+$EVALON_ROYAL_BLUE_1: #e6f1ff;
+
+$EVALON_ROYAL_BLUE_0: #fafcff;
+
+.evalon-royal-blue-8 {
+    color: $EVALON_ROYAL_BLUE_5;
+}
+
+.evalon-royal-blue-7 {
+    color: $EVALON_ROYAL_BLUE_5;
+}
+
+.evalon-royal-blue-5 {
+    color: $EVALON_ROYAL_BLUE_5;
+}
+
+.evalon-royal-blue-4 {
+    color: $EVALON_ROYAL_BLUE_4;
+}
+
+.evalon-royal-blue-2 {
+    color: $EVALON_ROYAL_BLUE_2;
+}
+
+.evalon-royal-blue-1 {
+    color: $EVALON_ROYAL_BLUE_1;
+}
+
+.evalon-royal-blue-0 {
+    color: $EVALON_ROYAL_BLUE_0;
+}
+
+.ev-white {
+    color: white;
+}
+
+.ev-grey-0 {
+    color: $EVALON_GREY_LEVEL_0;
+}
+
+.ev-grey-1 {
+    color: $EVALON_GREY_LEVEL_1;
+}
+
+.ev-font-color-light {
+    color: $EVALON_FONT_COLOR_LIGHT;
+}
+
+.ev-font-color {
+    color: $EVALON_FONT_COLOR;
+}
+
+.ev-background-light {
+    background-color: $EVALON_GREY_LIGHT;
+}
+
+.ev-blue {
+    color: $EVALON_BLUE;
+}
+
+.ev-blue-light {
+    color: $EVALON_BLUE_LIGHT;
+
+}
+
+.ev-red {
+    color: $EVALON_RED;
+
+}
+
+.ev-red-light {
+    color: $EVALON_RED_LIGHT;
+
+}
+
+.ev-green {
+    color: $EVALON_GREEN;
+
+}
+
+.ev-green-light {
+    color: $EVALON_GREEN_LIGHT;
+
+}
+
+.ev-yellow {
+    color: $EVALON_YELLOW;
+
+}
+
+.ev-yellow-light {
+    color: $EVALON_YELLOW_LIGHT;
+}
+
+.ev-purple {
+
+}
+
+// border color
+
+$EVALON_BORDER_COLOR_GREY: $NEUTRAL_GREY_2;
+
+$EVALON_BORDER_COLOR_BLUE: $EVALON_ROYAL_BLUE_2;

@@ -1,0 +1,61 @@
+@import "ev-layouts";
+
+@mixin ev-padding($PX: $SIZE_16_PX) {
+    padding: $PX;
+}
+
+@mixin ev-padding($TD, $LR) {
+    padding: $TD $LR;
+}
+
+@mixin ev-padding-tb($TOP, $BOTTOM) {
+    padding-top: $TOP;
+
+    padding-bottom: $BOTTOM;
+}
+
+@mixin ev-padding-lr($LEFT, $RIGHT) {
+    padding-left: $LEFT;
+
+    padding-right: $RIGHT;
+}
+
+@mixin ev-margin-lr($LEFT, $RIGHT) {
+    margin-left: $LEFT;
+
+    margin-right: $RIGHT;
+}
+
+@mixin ev-margin-left-and-right($LEFT, $RIGHT) {
+    margin-left: $LEFT;
+
+    margin-right: $RIGHT;
+}
+
+@mixin ev-padding-top-and-bottom($TOP, $BOTTOM) {
+    padding-top: $TOP;
+
+    padding-bottom: $BOTTOM;
+}
+
+@mixin ev-padding-left-and-right($LEFT, $RIGHT) {
+    padding-left: $LEFT;
+
+    padding-right: $RIGHT;
+}
+
+@mixin ev-padding-top($PX: $SIZE_16_PX) {
+    padding-top: $PX;
+}
+
+@mixin ev-padding-bottom($PX: $SIZE_16_PX) {
+    padding-bottom: $PX;
+}
+
+@mixin ev-padding-left($PX: $SIZE_16_PX) {
+    padding-left: $PX;
+}
+
+@mixin ev-padding-right($PX: $SIZE_16_PX) {
+    padding-right: $PX;
+}

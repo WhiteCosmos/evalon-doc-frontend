@@ -1,0 +1,3 @@
+@mixin ev-transition($VALUE, $TIME) {
+    transition: $VALUE, $TIME;
+}

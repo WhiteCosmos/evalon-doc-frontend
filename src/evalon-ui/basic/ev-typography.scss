@@ -1,0 +1,52 @@
+// 用于排版的CSS设置
+
+
+.ev-text-ellipsis {
+    width: 90%;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+
+    text-align: left; //TODO 放到其它位置
+}
+
+.ev-text-ellipsis-90 {
+    width: 90%;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+}
+
+.ev-text-ellipsis-80 {
+    width: 80%;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+}
+
+.ev-text-ellipsis-70 {
+    width: 70%;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+}
+
+.ev-text-ellipsis-container {
+    min-width: 0; // 让elipsis生效
+
+    flex: 1;
+}
+
+

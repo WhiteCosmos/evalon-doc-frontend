@@ -1,0 +1,37 @@
+@import "basic/ev-fonts";
+@import "basic/ev-colors";
+@import "basic/ev-borders";
+@import "basic/ev-layouts";
+@import "basic/ev-paddings";
+@import "basic/ev-margins";
+@import "basic/ev-animations";
+@import "basic/ev-interactives";
+@import "basic/ev-typography";
+
+* {
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* indent */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $WHITE;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $WHITE;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $WHITE;
+}
