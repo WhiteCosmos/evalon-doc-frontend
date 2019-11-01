@@ -1,5 +1,5 @@
 <template>
-    <div class="ev-panel ev-width-max" v-show="visible">
+    <div class="ev-panel ev-width-max" v-show="visible_">
         <slot></slot>
     </div>
 </template>
@@ -7,6 +7,9 @@
 <script>
     export default {
         name: "ev-panel",
+        created() {
+            this.visible_ = this.visible
+        },
         props: {
             name: {type: String},
 
@@ -16,6 +19,16 @@
                 type: Boolean,
 
                 default: false,
+            }
+        },
+        data() {
+            return {
+                visible_: false
+            }
+        },
+        watch: {
+            visible(newVal) {
+                this.visible_ = newVal
             }
         }
     }

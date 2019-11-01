@@ -26,10 +26,10 @@
         },
         computed: {
             fieldName() {
-                return this.isResponse ? this.javaField.fieldType : this.javaField.fieldName
+                return this.javaField.fieldName
             },
             fieldType() {
-                return this.javaField.fieldType
+                return this.isResponse ? this.javaField.fieldName : this.javaField.fieldType
             },
             fieldComment() {
                 return this.javaField.fieldCommentTitle

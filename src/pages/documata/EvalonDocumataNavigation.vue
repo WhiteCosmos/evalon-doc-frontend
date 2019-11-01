@@ -27,11 +27,11 @@
 
             <ev-col-gutter-m></ev-col-gutter-m>
 
-            <ev-icon-button icon-name="cog"
-                            icon-color="ev-blue-light"
-                            icon-active-color="ev-blue"
-                            @click.native="toConfig"
-                            :active="isConfig"></ev-icon-button>
+<!--            <ev-icon-button icon-name="cog"-->
+<!--                            icon-color="ev-blue-light"-->
+<!--                            icon-active-color="ev-blue"-->
+<!--                            @click.native="toConfig"-->
+<!--                            :active="isConfig"></ev-icon-button>-->
         </div>
     </div>
 </template>
@@ -69,7 +69,7 @@
                 this.$router.push('/registry')
             },
             toHelp() {
-                this.$router.push('/help')
+                window.open("https://yuque.antfin-inc.com/rmb/evalon_doc")
             },
             toConfig() {
                 this.$router.push('/config')

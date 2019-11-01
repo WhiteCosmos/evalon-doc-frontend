@@ -3,9 +3,9 @@
         <div class="ev-row xxx">
             <div class="ev-col-1 ev-col-center">
                 <div class="icon-container ev-center" @click="expand_ = !expand_">
-                    <ev-icon icon-name="compress" icon-color="neutral-grey-4" icon-scale=".8" v-if="expand_"></ev-icon>
+                    <ev-icon icon-name="compress" icon-color="neutral-grey-4" :icon-scale=".8" v-if="expand_"></ev-icon>
 
-                    <ev-icon icon-name="expand" icon-color="neutral-grey-4" icon-scale=".8" v-else></ev-icon>
+                    <ev-icon icon-name="expand" icon-color="neutral-grey-4" :icon-scale=".8" v-else></ev-icon>
                 </div>
 
                 <h5 class="ev-blue font">name</h5>

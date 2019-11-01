@@ -44,6 +44,8 @@ export const SWITCH_API = "SWITCH_API"
 
 export const SWITCH_STRUCT = "SWITCH_STRUCT"
 
+export const TOGGLE_FAVORITES = "TOGGLE_FAVORITES"
+
 // actions used in router
 
 export const FIND_AND_SET_PROJECT ="FIND_AND_SET_PROJECT"

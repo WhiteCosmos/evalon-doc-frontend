@@ -50,10 +50,13 @@
                 }
             },
 
+            defaultOption: {
+                type: Object
+            },
+
             optionsProvider: { // 通过Http请求或者Promise获取Options
                 type: Function,
             },
-
 
             optionHeadKey: {type: String}, // 选项主标题
 
@@ -229,6 +232,13 @@
                 this.options_ = newVal;
 
                 this.setDefaultOption()
+            },
+            defaultOption(newVal) {
+                if (!newVal) {
+                    return
+                }
+
+                this.currentSelectedOption = newVal
             }
         },
         mixins: [

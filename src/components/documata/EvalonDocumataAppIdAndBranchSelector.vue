@@ -3,10 +3,11 @@
         <ev-selector-group>
             <EvalonDocumataAppIdSelector></EvalonDocumataAppIdSelector>
 
-            <ev-filter-selector :options="branches"
-                                :has-default-option="true"
-                                option-head-key="branchName"
-                                @select="switchBranch">
+            <ev-selector :options="branches"
+                         :has-default-option="true"
+                         :default-option="branch"
+                         option-head-key="branchName"
+                         @select="switchBranch">
                 <template v-slot:button>
                     <ev-icon-button-small @click.native.stop="update" icon-name="redo-alt"
                                           icon-color="ev-blue-light"
@@ -14,7 +15,7 @@
 
                     <ev-col-gutter-16-px></ev-col-gutter-16-px>
                 </template>
-            </ev-filter-selector>
+            </ev-selector>
         </ev-selector-group>
     </div>
 </template>
@@ -28,6 +29,7 @@
     import EvColGutter16Px from "@/evalon-ui/layout/ev-col-gutter-16-px";
     import EvalonDocumataAppIdSelector from "@/components/documata/EvalonDocumataAppIdSelector";
     import EvalonDocumataRouterMixin from "@/pages/mixin/EvalonDocumataRouterMixin";
+    import EvSelector from "@/evalon-ui/form/selector/ev-selector";
 
     export default {
         name: "EvalonDocumataAppIdAndBranchSelector",
@@ -45,6 +47,7 @@
             }
         },
         components: {
+            EvSelector,
             EvalonDocumataAppIdSelector,
             EvColGutter16Px,
             EvIconButtonSmall, EvIcon, EvIconButton, EvFilterSelector, EvSelectorGroup

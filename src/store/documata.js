@@ -21,7 +21,7 @@ import {
     SET_PROJECT,
     SET_PROJECTS,
     SET_STRUCT,
-    SET_STRUCTS, SWITCH_API, SWITCH_BRANCH, SWITCH_MODULE, SWITCH_STRUCT,
+    SET_STRUCTS, SWITCH_API, SWITCH_BRANCH, SWITCH_MODULE, SWITCH_STRUCT, TOGGLE_FAVORITES,
 } from "@/store/documata_actions";
 
 import * as api from "@/api/api"
@@ -221,6 +221,10 @@ export const documata = {
             await dispatch(QUERY_STRUCT, params)
         },
 
+        async [TOGGLE_FAVORITES]({dispatch, commit, state}, params) {
+
+        },
+
         // actions used in router
 
         async [FIND_AND_SET_PROJECT]({dispatch, commit, state}, params) {
@@ -241,7 +245,7 @@ export const documata = {
             let moduleName = params.moduleName
 
             let module = state.project.modules.find(m => {
-                return m.appName === moduleName
+                return m.moduleName === moduleName || m.appName === moduleName
             })
 
             commit(SET_MODULE, module)

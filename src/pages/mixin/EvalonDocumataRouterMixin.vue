@@ -34,7 +34,11 @@
                 return encodeURIComponent(this.project.projectName)
             },
             moduleName() {
-                return encodeURIComponent(this.module.moduleName)
+                if (this.module.appName) {
+                    return encodeURIComponent(this.module.appName);
+                } else {
+                    return encodeURIComponent(this.module.moduleName);
+                }
             },
             branchName() {
                 return encodeURIComponent(this.branch.branchName)
@@ -98,7 +102,6 @@
 
                 return repositoryName && projectName && moduleName
             },
-
 
             switchModule(params) {
                 this.$store.dispatch(SWITCH_MODULE, params).then(() => {

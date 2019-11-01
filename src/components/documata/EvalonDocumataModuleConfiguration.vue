@@ -1,16 +1,16 @@
 <template>
     <ev-modal :cancel-handler="onCancel">
-        <ev-title>abc-service-descriptor</ev-title>
+        <ev-title>{{ module.moduleName }}</ev-title>
 
         <ev-row-gutter-l></ev-row-gutter-l>
 
-        <ev-search
-            placeholder="搜索 App Id ..."
-            :options-provider="searchApplications"
-            option-head-key="appName"
-            :select-callback="onSelectApp"></ev-search>
+        {{ appId }}
+
+        <ev-input :auto-focus="true" v-model="appId" placeholder="请输入AppId..."></ev-input>
 
         <ev-row-gutter-l></ev-row-gutter-l>
+
+        <ev-round-button @click.native="confirm">确认</ev-round-button>
     </ev-modal>
 </template>
 
@@ -24,18 +24,32 @@
     import EvRowGutterL from "@/evalon-ui/layout/ev-row-gutter-l";
     import EvTitle from "@/evalon-ui/typography/ev-title";
     import EvalonDocApiMixin from "@/api/EvalonDocApiMixin";
+    import EvInput from "@/evalon-ui/form/input/ev-input";
+    import EvRoundButton from "@/evalon-ui/button/ev-round-button";
 
     export default {
         name: "EvalonDocumataModuleConfiguration",
-        methods: {
-            onSelectApp(app) {
-                this.$emit('select', app)
-            },
-            onCancel() {
-                this.$emit('select')
+        props: {
+            module: {type: Object}
+        },
+        data() {
+            return {
+                appId: ""
             }
         },
-        components: {EvTitle, EvRowGutterL, EvTextButton, EvRowGutterMax, EvButton, EvSearch, EvRowGutterM, EvModal},
+        methods: {
+            onCancel() {
+                this.$emit('confirm', undefined)
+            },
+            confirm() {
+                this.$emit('confirm', this.appId)
+            },
+        },
+        components: {
+            EvRoundButton,
+            EvInput,
+            EvTitle, EvRowGutterL, EvTextButton, EvRowGutterMax, EvButton, EvSearch, EvRowGutterM, EvModal
+        },
         mixins: [
             EvalonDocApiMixin,
         ]

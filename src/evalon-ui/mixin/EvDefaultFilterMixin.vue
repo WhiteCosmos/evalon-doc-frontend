@@ -6,16 +6,22 @@
         props: {
             filterContent: "",
 
-            filterKeyword: ""
+            filterKeyword: "",
         },
-        methods: {
+        computed: {
             isDefaultMatch() {
                 if (!this.filterKeyword || !this.filterContent) {
                     return true
                 }
 
-                return this.filterContent.includes(this.filterKeyword)
+                let flag = this.filterContent.includes(this.filterKeyword)
+
+                if (flag) {
+                    this.$emit('default-match')
+                }
+
+                return flag
             }
-        }
+        },
     }
 </script>

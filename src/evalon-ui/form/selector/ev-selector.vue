@@ -27,6 +27,8 @@
                     v-show="is(SELECT_LOCKED)"></EvIcon>
 
             <ev-col-gutter-m></ev-col-gutter-m>
+
+            <slot name="button"></slot>
         </div>
 
         <transition name="fade">
@@ -81,6 +83,8 @@
         },
         methods: {
             onSelectHandler(option) {
+                this.$emit('select', option)
+
                 this.to(this.AFTER_SELECT, option)
             }
         },

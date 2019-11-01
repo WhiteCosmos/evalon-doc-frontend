@@ -6,6 +6,18 @@ $EVALON_FONT_COLOR_LIGHT: #77828c;
 
 $EVALON_FONT_COLOR_VERY_LIGHT: #98a6b3;
 
+.font-color-1 {
+    color: $EVALON_FONT_COLOR;
+}
+
+.font-color-2 {
+    color: $EVALON_FONT_COLOR_LIGHT;
+}
+
+.font-color-3 {
+    color: $EVALON_FONT_COLOR_VERY_LIGHT;
+}
+
 h1, h2, h3, h4, h5, h6, p, a {
     font-family: "PingFang SC", sans-serif; // 统一使用苹方字体
 }

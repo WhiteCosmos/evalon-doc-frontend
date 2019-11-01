@@ -7,7 +7,7 @@
             :placeholder="placeholder"
             @keyup.esc="escHandler"
             @keyup.enter="enterHandler"
-            @click="clickHandler"
+            @click="doClick"
             v-model="value_">
     </div>
 </template>
@@ -16,7 +16,7 @@
     import EvAbstractComponent from "@/evalon-ui/mixin/EvAbstractComponent";
 
     export default {
-        name: "ev-filter-input",
+        ame: "ev-filter-input",
         created() {
             this.registry([
                 {
@@ -66,27 +66,35 @@
                 this.to(this.BEFORE_INPUT)
             },
 
-            clickHandler() {
+            doClick() {
                 this.to(this.INPUTTING)
             },
 
             beforeInputHandler() {
                 this.value_ = this.defaultValue
 
-                this.$emit('change', "") // 清空搜索值
+                //this.$emit('change', "") // 清空搜索值
             },
 
             onInputtingHandler() {
                 this.$refs.input.focus()
 
                 this.$refs.input.select()
-            }
+            },
         },
         watch: {
             value_(newValue, oldValue) {
                 if (this.is(this.INPUTTING)) {
                     this.$emit('change', newValue)
                 }
+            },
+            value(newValue, oldValue) {
+                if (newValue === undefined) {
+                    this.to(this.BEFORE_INPUT)
+                }
+                // if (!newValue) {
+                //     this.to(this.BEFORE_INPUT)
+                // }
             },
             defaultValue(newValue, oldValue) {
                 this.to(this.BEFORE_INPUT)

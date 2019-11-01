@@ -5,9 +5,10 @@
 
             <ev-row-gutter-8-px></ev-row-gutter-8-px>
 
-            <ev-icon-button-only-icon icon-name="heart"
-                                      icon-color="neutral-grey-4"
-                                      icon-active-color="ev-red"></ev-icon-button-only-icon>
+            <ev-icon-button-only-icon icon-name="star"
+                                      icon-color="neutral-grey-3"
+                                      icon-active-color="ev-yellow"
+                                      @toggle="toggleApiFavorites"></ev-icon-button-only-icon>
         </div>
 
         <div class="ev-row ev-col-center">
@@ -15,7 +16,7 @@
 
             <ev-col-gutter-8-px></ev-col-gutter-8-px>
 
-            <ev-icon icon-name="copy" icon-color="neutral-grey-4"></ev-icon>
+            <!--            <ev-icon icon-name="copy" icon-color="neutral-grey-4"></ev-icon>-->
         </div>
 
         <div class="ev-row ev-col-center">
@@ -23,7 +24,7 @@
 
             <ev-col-gutter-8-px></ev-col-gutter-8-px>
 
-            <ev-icon icon-name="copy" icon-color="neutral-grey-4"></ev-icon>
+            <!--            <ev-icon icon-name="copy" icon-color="neutral-grey-4"></ev-icon>-->
         </div>
     </div>
 </template>
@@ -49,6 +50,11 @@
             },
             documentContent() {
                 return this.$store.state.documata.documentContent
+            }
+        },
+        methods: {
+            toggleApiFavorites() {
+
             }
         },
         components: {EvIconButtonOnlyIcon, EvRowGutter8Px, EvIconButton, EvIconButtonSmall, EvColGutter8Px, EvIcon}

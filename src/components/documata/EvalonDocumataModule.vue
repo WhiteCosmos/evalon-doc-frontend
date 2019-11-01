@@ -11,7 +11,8 @@
 
             <div class="ev-col module-name-container ev-width-max">
                 <h6 class="content-head">{{ module.moduleName }}</h6>
-                <h6 class="content-subhead">{{ module.appId }}</h6>
+
+                <h6 class="content-subhead">{{ module.appName }}</h6>
             </div>
 
             <ev-row-gutter-max></ev-row-gutter-max>
@@ -24,7 +25,7 @@
         <EvalonDocumataModuleConfiguration
             :module="module"
             v-show="selectingApp"
-            v-on:select="selectHandler"></EvalonDocumataModuleConfiguration>
+            v-on:confirm="onConfirm"></EvalonDocumataModuleConfiguration>
     </div>
 </template>
 
@@ -48,9 +49,14 @@
         },
         created() {
             this.module_ = this.module
+
+            if (this.module.registered) {
+                this.toggleCheck()
+            }
         },
         model: {
             prop: "module",
+
             event: "change"
         },
         props: {
@@ -74,17 +80,17 @@
                 this.module.needRegistry = !this.module.needRegistry
             },
 
-            onSelectHandler(app) {
-                if (app) {
-                    this.module_.appId = app.appName
+            onConfirm(appId) {
+                console.log(appId)
 
-                    this.module_.teamName = app.teamName
+                if (appId) {
+                    this.module_.appName = appId
 
                     this.$emit('change', this.module_)
                 }
 
                 this.selectingApp = false;
-            }
+            },
         }
     }
 </script>

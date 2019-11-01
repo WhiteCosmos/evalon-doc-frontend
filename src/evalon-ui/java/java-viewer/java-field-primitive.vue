@@ -2,7 +2,7 @@
     <div class="ev-row" @mouseenter="hover_ = true" @mouseleave="hover_ = false">
         <java-column-name :java-field="javaField" :layer="layer" :is-hover="hover_" :is-response="isResponse"></java-column-name>
 
-        <java-column-type :java-field="javaField" :is-hover="hover_"></java-column-type>
+        <java-column-type :java-field="javaField" :is-hover="hover_" :is-response="isResponse"></java-column-type>
 
         <java-column-description :java-field="javaField" :is-hover="hover_"></java-column-description>
     </div>

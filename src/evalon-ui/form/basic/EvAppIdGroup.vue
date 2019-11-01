@@ -1,5 +1,5 @@
 <template>
-    <div class="ev-col" v-show="isRepositoryVisible(project)">
+    <div class="ev-col">
         <div class="app-id-group ev-row ev-col-center">
             <ev-col-gutter-16-px></ev-col-gutter-16-px>
 
@@ -14,17 +14,11 @@
 
                 <h6 class="ev-font-color-light">{{ project.projectName }}</h6>
             </div>
-
-            <div class="ev-row right-group">
-                <h6 class="ev-font-color-light">{{ project.teamName}}</h6>
-
-                <ev-col-gutter-16-px></ev-col-gutter-16-px>
-            </div>
         </div>
 
         <EvOption
-            v-show="isAppVisible(module)"
             v-for="(module, idx) in project.modules"
+            v-show="isOptionVisible(module)"
             :key="idx"
             :option="module"
             option-head-key="appName"
@@ -32,6 +26,8 @@
             :is-select="isSelected(module)"
             :hover-handler="onHoverHandler"
             @select="onSelectHandler"></EvOption>
+
+
     </div>
 </template>
 
@@ -49,14 +45,17 @@
                 type: Object
             },
 
-            keyword: {type: String},
+            filterKeyword: {type: String},
 
             currentHoveredModule: undefined
         },
+        data() {
+            return {
+
+            }
+        },
         methods: {
             onHoverHandler(module) {
-                console.log("on hover handler")
-
                 this.$emit('hover', {
                     project: {
                         projectId: this.project.projectId,
@@ -67,7 +66,7 @@
                 })
             },
             onSelectHandler(module) {
-                console.log("on select handler")
+                console.log(module)
 
                 this.$emit('select', {
                     project: {
@@ -78,22 +77,28 @@
                     module: module
                 })
             },
-            isRepositoryVisible(repo) {
-                if (!this.keyword) {
+            isOptionVisible(module) {
+                if (this.filterKeyword === undefined || this.filterKeyword === "") {
                     return true
                 }
 
-                return repo.apps.find(app => {
-                    return app.appName.includes(this.keyword)
-                })
-            },
-            isAppVisible(app) {
-                if (!this.keyword) {
-                    return true
-                }
-
-                return app.appName.includes(this.keyword)
-            },
+                return module.appName.includes(this.filterKeyword)
+            }
+        },
+        watch: {
+            filterKeyword(newVal) {
+                // if (!this.project || !newVal) {
+                //     return
+                // }
+                //
+                // let m = this.project.modules.find(m => {
+                //     m.appName.includes(newVal)
+                // })
+                //
+                // if (m) {
+                //     this.$emit()
+                // }
+            }
         },
         components: {EvColGutter16Px, EvColGutter8Px, EvColGutter4Px, EvOption},
         mixins: [

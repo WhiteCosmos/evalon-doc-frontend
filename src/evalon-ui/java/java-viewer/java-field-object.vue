@@ -8,7 +8,7 @@
                               :is-response="isResponse"
                               :expand="expand_"></java-column-name>
 
-            <java-column-type :java-field="javaField" :is-hover="hover_"></java-column-type>
+            <java-column-type :java-field="javaField" :is-hover="hover_" :is-response="isResponse"></java-column-type>
 
             <java-column-description :java-field="javaField" :is-hover="hover_"></java-column-description>
         </div>

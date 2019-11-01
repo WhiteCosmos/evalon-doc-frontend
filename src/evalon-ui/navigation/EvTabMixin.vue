@@ -98,16 +98,16 @@
                 this.$emit('toggle-panel', this.currentLabel)
             },
             togglePanelVisible(panel) {
-                panel.visible = !panel.visible
+                panel.visible_ = !panel.visible_
             }
         },
         watch: {
             currentLabel(label) {
                 this.panels.forEach(p => {
                     if (p.label === label) {
-                        p.panel.visible = true
+                        p.panel.visible_ = true
                     } else {
-                        p.panel.visible = false
+                        p.panel.visible_ = false
                     }
                 })
             }

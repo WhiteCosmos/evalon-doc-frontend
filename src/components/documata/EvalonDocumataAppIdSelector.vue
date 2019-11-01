@@ -10,9 +10,9 @@
             <!-- 搜索框 -->
 
             <ev-filter-input
-                v-model="keyword"
+                v-model="filterKeyword"
                 :placeholder="placeholder"
-                :default-value="module.appName"></ev-filter-input>
+                :default-value="module ? module.appName : ''"></ev-filter-input>
 
             <!-- 仓库名 / 项目名 -->
 
@@ -41,7 +41,7 @@
         <transition name="fade">
             <EvAppIdGroups
                 v-show="is(SELECTING)"
-                :keyword="keyword"
+                :filter-keyword="filterKeyword"
                 :projects="projects"
                 @select="onSelectHandler"></EvAppIdGroups>
         </transition>
@@ -74,9 +74,9 @@
         name: "EvalonDocumataAppIdSelector",
         data() {
             return {
-                keyword: "",
+                filterKeyword: undefined,
 
-                currentHoveredOption: undefined
+                currentHoveredOption: undefined,
             }
         },
         computed: {
@@ -105,26 +105,41 @@
             }
         },
         methods: {
+            toggleExpand() {
+                if (this.filterKeyword) {
+                    return
+                }
+
+                this.toggle()
+            },
             clearHandler() {
 
             },
             escHandler() {
-                this.keyword = ""
+                this.filterKeyword = undefined
 
                 this.to(this.AFTER_SELECT, undefined)
             },
             onSelectHandler(option) {
-                let project = option.project
+                if (!option) {
+                    this.filterKeyword = undefined
+
+                    this.to(this.BEFORE_SELECT)
+
+                    return
+                }
+
+                let project = option.project;
 
                 let module = option.module
 
                 this.switchModule({
                     repositoryName: project.repositoryName,
                     projectName: project.projectName,
-                    moduleName: module.appName,
+                    moduleName: module.moduleName,
                 })
 
-                this.keyword = ""
+                this.filterKeyword = undefined
 
                 //
                 // if (!option) {
@@ -139,6 +154,17 @@
 
                 this.to(this.AFTER_SELECT, option)
             },
+        },
+        watch: {
+            filterKeyword(newVal) {
+                if (!newVal) {
+                    return
+                }
+
+                if (this.currentStatus !== this.SELECTING) {
+                    this.to(this.SELECTING)
+                }
+            }
         },
         components: {
             EvColGutter16Px,

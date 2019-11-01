@@ -1,13 +1,12 @@
 <template>
-    <div class="ev-input">
+    <div class="root">
         <input
             ref="input"
             type="text"
-            class="ev-selector-input"
+            class="input-style"
             :placeholder="placeholder"
             @keyup.esc="escHandler"
             @keyup.enter="enterHandler"
-            @click="clickHandler_"
             v-model="value_">
     </div>
 </template>
@@ -16,13 +15,13 @@
     export default {
         name: "ev-input",
         mounted() {
-            if (this.defaultValue) {
-                this.value_ = this.defaultValue
-            }
-
-            if (this.autoFocus) {
-                this.$refs.input.focus()
-            }
+            // if (this.defaultValue) {
+            //     this.value_ = this.defaultValue
+            // }
+            //
+            // if (this.autoFocus) {
+            //     this.$refs.input.focus()
+            // }
         },
         model: {
             prop: "value",
@@ -79,9 +78,9 @@
         },
         methods: {
             clickHandler_() {
-                if (this.selectAllOnClick) {
-                    this.$refs.input.select()
-                }
+                // if (this.selectAllOnClick) {
+                //     this.$refs.input.select()
+                // }
 
                 // if (this.clearAllOnClick) {
                 //
@@ -95,10 +94,13 @@
                 // if (oldValue && !newValue) {
                 //     this.clearHandler && this.clearHandler()
                 // }
-                if (!oldValue && newValue) {
-                    return
-                }
-
+                // if (!oldValue && newValue) {
+                //     return
+                // }
+                //
+                // if (newValue) {
+                //     this.$emit('change', newValue);
+                // }
                 if (newValue) {
                     this.$emit('change', newValue);
                 }
@@ -110,11 +112,11 @@
 <style lang="scss" scoped>
     @import "../../evalon-ui";
 
-    .ev-input {
+    .root {
         flex: 1;
     }
 
-    .ev-selector-input {
+    .input-style {
         font-size: 12px;
 
         color: $EVALON_BLUE;
@@ -128,5 +130,11 @@
         width: 100%;
 
         background-color: transparent;
+
+        text-indent: 16px;
+
+        @include ev-border($EVALON_BLUE_LIGHT, $EVALON_BLUE_VERY_LIGHT);
+
+        border-radius: 32px;
     }
 </style>

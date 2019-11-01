@@ -9,6 +9,10 @@
         <div class="container">
 <!--            <ev-selector :options="optionsCopy"></ev-selector>-->
         </div>
+
+        {{ xxx }}
+
+        <ev-input v-model="xxx"></ev-input>
     </div>
 </template>
 
@@ -18,6 +22,7 @@
     import EvSelectorGroup from "@/evalon-ui/form/selector/ev-selector-group";
     import EvSearch from "@/evalon-ui/form/search/ev-search";
     import EvFilter from "@/evalon-ui/form/search/ev-filter";
+    import EvInput from "@/evalon-ui/form/input/ev-input";
 
     export default {
         name: "Playground",
@@ -45,9 +50,10 @@
                     "ccc2",
                     "ccc3",
                 ],
+                xxx: "",
             }
         },
-        components: {EvFilter, EvSearch, EvSelectorGroup, EvRowGutterM, EvSelector}
+        components: {EvInput, EvFilter, EvSearch, EvSelectorGroup, EvRowGutterM, EvSelector}
     }
 </script>
 

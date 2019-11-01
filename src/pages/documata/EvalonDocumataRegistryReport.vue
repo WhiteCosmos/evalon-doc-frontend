@@ -148,7 +148,9 @@
 
                         projectName: projectName,
 
-                        moduleName: module.appName,
+                        moduleName: module.moduleName,
+
+                        appName: module.appName,
 
                         branchName: branchName
                     })

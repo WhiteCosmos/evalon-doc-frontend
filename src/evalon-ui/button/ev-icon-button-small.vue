@@ -3,7 +3,7 @@
         <div class="ev-icon-button-holder ev-center">
             <ev-icon :icon-name="iconName"
                      :icon-color="buttonColor"
-                     icon-scale=0.9></ev-icon>
+                     :icon-scale="0.9"></ev-icon>
         </div>
     </div>
 </template>
@@ -17,9 +17,15 @@
         props: {
             iconName: {type: String},
 
-            iconColor: {type: String},
+            iconColor: {
+                type: String,
+                default: "ev-blue-light"
+            },
 
-            iconActiveColor: {type: String},
+            iconActiveColor: {
+                type: String,
+                default: "ev-blue"
+            },
 
             iconHoverColor: {type: String},
 
@@ -27,10 +33,6 @@
         },
         data() {
             return {
-                iconColor: "ev-blue-light",
-
-                iconActiveColor: "ev-blue",
-
                 buttonColor: this.iconColor,
 
                 active_: this.active,

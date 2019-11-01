@@ -19,6 +19,7 @@
     import EvColGutterM from "@/evalon-ui/layout/ev-col-gutter-m";
     import EvOption1 from "@/evalon-ui/typography/ev-option-1";
     import EvOption2 from "@/evalon-ui/typography/ev-option-2";
+    import EvDefaultFilterMixin from "@/evalon-ui/mixin/EvDefaultFilterMixin";
 
     export default {
         name: "EvOption",
@@ -69,7 +70,7 @@
             onClick(option) {
                 this.$emit('select', option)
             }
-        }
+        },
     }
 </script>
 

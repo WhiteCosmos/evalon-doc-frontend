@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Playground from "@/pages/Playground";
 import EvalonDocumataHolder from "@/pages/documata/EvalonDocumataHolder";
 import EvalonDocumataRegistry from "@/pages/documata/EvalonDocumataRegistry";
-import EvalonDocumataRegistryReport from "@/pages/documata/EvalonDocumataRegistryReport";
 import EvalonDocumataNotFound from "@/pages/documata/EvalonDocumataNotFound";
 import EvalonDocumataUpdate from "@/pages/documata/EvalonDocumataUpdate";
+import EvalonDocumataConfiguration from "@/pages/documata/EvalonDocumataConfiguration";
 
 Vue.use(Router)
 
@@ -14,8 +13,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+            redirect: '/api'
         },
         {
             path: '/playground',
@@ -63,9 +61,9 @@ export default new Router({
             component: EvalonDocumataUpdate
         },
         {
-            path: '/report',
-            name: 'Report',
-            component: EvalonDocumataRegistryReport
+            path: '/config',
+            name: 'Config',
+            component: EvalonDocumataConfiguration,
         }
     ]
 })

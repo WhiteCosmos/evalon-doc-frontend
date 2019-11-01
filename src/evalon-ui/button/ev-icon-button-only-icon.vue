@@ -3,7 +3,7 @@
         <div class="ev-icon-button-holder ev-center" :class="iconClasses">
             <ev-icon :icon-name="iconName"
                      :icon-color="buttonColor"
-                     icon-scale=0.9></ev-icon>
+                     :icon-scale="1.2"></ev-icon>
         </div>
     </div>
 </template>
@@ -25,10 +25,6 @@
         },
         data() {
             return {
-                iconColor: "ev-blue-light",
-
-                iconActiveColor: "ev-blue",
-
                 buttonColor: this.iconColor,
 
                 active_: this.active,
@@ -44,6 +40,14 @@
         methods: {
             toggleActive() {
                 this.active_ = !this.active_
+
+                if (this.active_) {
+                    this.buttonColor = this.iconActiveColor;
+                } else {
+                    this.buttonColor = this.iconColor;
+                }
+
+                this.$emit('toggle')
             }
         },
         watch: {
@@ -85,5 +89,7 @@
         height: 36px;
 
         border-radius: 36px;
+
+        padding-bottom: 2px;
     }
 </style>

@@ -1,26 +1,28 @@
 <template>
     <div>
-        <div class="ev-options ev-col ev-width-max"
-             v-shortkey="{up: ['arrowup'], down: ['arrowdown'], enter: ['enter']}"
-             @shortkey="shortKey">
+        <!--           v-shortkey="{up: ['arrowup'], down: ['arrowdown'], enter: ['enter']}"
+                     @shortkey="shortKey" -->
+
+        <div class="ev-options ev-col ev-width-max">
 
             <ev-row-gutter-32-px></ev-row-gutter-32-px>
 
             <EvAppIdGroup
                 v-for="(project, index) in projects"
+                v-show="isProjectVisible(project)"
                 :key="index"
-                :keyword="keyword"
+                :filter-keyword="filterKeyword"
                 :project="project"
                 :current-hovered-module="currentHoveredModule"
-                :is-hovered-handler="isHoveredHandler"
+                :is-hovered-handler="isHoveredHandler_"
                 @select="onSelectHandler"
                 @hover="onHoverHandler"></EvAppIdGroup>
 
-            <EvPlaceholder v-if="showEmptyMessage" :height=48>{{ emptyMessage }}</EvPlaceholder>
+            <EvPlaceholder v-if="!anyMatch" :height=48>没有搜索结果。</EvPlaceholder>
         </div>
 
         <EvTransparentMask
-            @click.native="doSelectOption(null)"></EvTransparentMask>
+            @click.native="doSelectOption(undefined)"></EvTransparentMask>
     </div>
 </template>
 
@@ -37,6 +39,17 @@
 
     export default {
         name: "EvAppIdGroups",
+        created() {
+            this.projects.forEach(p => {
+                p.modules.forEach(m => {
+                    if (m.appName) {
+                        this.allModuleNames.push(m.appName);
+                    } else {
+                        this.allModuleNames.push(m.moduleName);
+                    }
+                })
+            })
+        },
         props: {
             projects: {
                 type: Array,
@@ -45,7 +58,7 @@
                 }
             },
 
-            keyword: {type: String},
+            filterKeyword: {type: String},
         },
         data() {
             return {
@@ -57,6 +70,8 @@
                 }
                  */
                 currentHoveredModule: undefined,
+
+                allModuleNames: []
             }
         },
         methods: {
@@ -66,11 +81,35 @@
             onHoverHandler(option) {
                 this.currentHoveredModule = option.module
             },
-            isHoveredHandler(module) {
+            isHoveredHandler_(module) {
                 return (this.currentHoveredModule && this.currentHoveredModule.module === module)
             },
-            isSelectedHandler(module) {
+            isSelectedHandler_(module) {
 
+            },
+            isProjectVisible(project) {
+                if (!this.filterKeyword) {
+                    return true
+                }
+
+                let m = project.modules.find(m => {
+                    return m.appName.includes(this.filterKeyword)
+                })
+
+                return m !== undefined
+            }
+        },
+        computed: {
+            anyMatch() {
+                if (!this.filterKeyword) {
+                    return true
+                }
+
+                let r = this.allModuleNames.find(name => {
+                    return name.includes(this.filterKeyword)
+                })
+
+                return r !== undefined
             }
         },
         components: {
